@@ -1,4 +1,18 @@
-export const workers = [
+interface Worker {
+    id: number;
+    name: string;
+    image: string;
+    age: number;
+    gender: string;
+    jobDetails: {
+        area: string;
+        position: string;
+        timeInCompany: number;
+        experience: number;
+    };
+}
+
+export const workers: Worker[] = [
     {
         id: 1,
         name: "Maria Lopez",

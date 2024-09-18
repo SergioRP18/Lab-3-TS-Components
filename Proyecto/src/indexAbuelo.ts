@@ -16,9 +16,9 @@ class AppContainer extends HTMLElement {
             workerCard.setAttribute(Attributes.uid, String(user.id));
             workerCard.setAttribute(Attributes.age, String(user.age));
             workerCard.setAttribute(Attributes.gender, user.gender);
-            // workerCard.setAttribute(Attributes.area, user.area);
-            // workerCard.setAttribute(Attributes.timeInCompany, user.timeInCompany);
-            // workerCard.setAttribute(Attributes.experience, String(user.experience));
+            workerCard.setAttribute(Attributes.area, user.jobDetails.area);
+            workerCard.setAttribute(Attributes.timeInCompany, String(user.jobDetails.timeInCompany));
+            workerCard.setAttribute(Attributes.experience, String(user.jobDetails.experience));
             this.person.push(workerCard);
         });
     }

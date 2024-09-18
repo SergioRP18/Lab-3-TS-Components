@@ -1,3 +1,5 @@
+import { workers } from "../../data/data";
+
 export enum Attributes {
     'image' = 'image',
     'name' = 'name',
@@ -26,18 +28,7 @@ class AppCard extends HTMLElement {
         this.attachShadow({mode:'open'});
     }
     static get observedAttributes(){
-        const attributesWorkers: Record<Attributes, null> = {
-            image: null,
-            name: null,
-            uid: null,
-            age: null,
-            gender: null,
-            area: null,
-            position: null,
-            timeInCompany: null,
-            experience: null,
-        };
-        return Object.keys(attributesWorkers);
+        return Object.keys(Attributes);
     }
     attributeChangedCallback(propName:Attributes, oldValue:string | undefined, newValue:string | undefined){
         switch(propName){
@@ -61,13 +52,13 @@ class AppCard extends HTMLElement {
         this.render();
     }
     connectedCallback(){
-        this.render;
+        this.render();
     }
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
             <section>
-                <img src="${this.image}}">
+                <img src="${this.image}">
                 <h1>${this.name}</h1>
                 <h3>${this.uid}</h3>
                 <h4>${this.age}</h4>
@@ -78,6 +69,9 @@ class AppCard extends HTMLElement {
                 <h5>${this.experience}</h5>
             </section>
             `
+            const worker = [];
+            const impar = workers.filter((_,index) => index % 2 !== 0);
+            console.log(impar);
         }
     }
 }
