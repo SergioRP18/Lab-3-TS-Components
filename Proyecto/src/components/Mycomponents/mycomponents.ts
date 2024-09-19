@@ -69,9 +69,7 @@ class AppCard extends HTMLElement {
                 <h5>${this.experience}</h5>
             </section>
             `
-            const worker = [];
-            const impar = workers.filter((_,index) => index % 2 !== 0);
-            console.log(impar);
+            
         }
     }
 }
