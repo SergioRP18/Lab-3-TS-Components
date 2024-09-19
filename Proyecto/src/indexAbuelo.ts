@@ -9,12 +9,13 @@ class AppContainer extends HTMLElement {
         super();
         this.attachShadow({mode:'open'});
 
-        const imparWorker = workers.filter((_,index) => index % 2 !== 0);
-        console.log(imparWorker);
-
         const workerCard: MyWorkers[] = [];
 
-        imparWorker.forEach((user) => {
+        const impar = workers.filter((_,index) => index % 2 !== 0);
+        console.log(impar);
+
+
+        impar.forEach((user) => {
             const workerCard = this.ownerDocument.createElement("app-card") as MyWorkers;
             workerCard.setAttribute(Attributes.image, user.image);
             workerCard.setAttribute(Attributes.name, user.name);
@@ -23,7 +24,7 @@ class AppContainer extends HTMLElement {
             workerCard.setAttribute(Attributes.gender, user.gender);
             workerCard.setAttribute(Attributes.area, user.jobDetails.area);
             workerCard.setAttribute(Attributes.position, user.jobDetails.position);
-            workerCard.setAttribute(Attributes.timeInCompany, String(user.jobDetails.timeInCompany));
+            workerCard.setAttribute(Attributes.timeincompany, String(user.jobDetails.timeInCompany));
             workerCard.setAttribute(Attributes.experience, String(user.jobDetails.experience));
             this.person.push(workerCard);
         });

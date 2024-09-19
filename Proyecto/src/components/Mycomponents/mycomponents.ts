@@ -1,5 +1,3 @@
-import { workers } from "../../data/data";
-
 export enum Attributes {
     'image' = 'image',
     'name' = 'name',
@@ -8,7 +6,7 @@ export enum Attributes {
     'gender' = 'gender',
     'area' = 'area',
     'position' = 'position',
-    'timeInCompany' = 'timeInCompany',
+    'timeincompany' = 'timeincompany',
     'experience' = 'experience'
 
 }
@@ -20,7 +18,7 @@ class AppCard extends HTMLElement {
     gender?: string;
     area?: string;
     position?: string;
-    timeInCompany?: number;
+    timeincompany?: number;
     experience?: number;
 
     constructor(){
@@ -38,8 +36,8 @@ class AppCard extends HTMLElement {
             case Attributes.age:
                     this.age = newValue ? Number(newValue) : undefined;
                     break;
-            case Attributes.timeInCompany:
-                    this.timeInCompany = newValue ? Number(newValue) : undefined;
+            case Attributes.timeincompany:
+                    this.timeincompany = newValue ? Number(newValue) : undefined;
                     break;
             case Attributes.experience:
                     this.experience = newValue ? Number(newValue) : undefined;
@@ -65,7 +63,7 @@ class AppCard extends HTMLElement {
                 <h3>${this.gender}</h3>
                 <p>${this.area}</p>
                 <p>${this.position}</p>
-                <h5>${this.timeInCompany}</h5>
+                <h5>${this.timeincompany}</h5>
                 <h5>${this.experience}</h5>
             </section>
             `
