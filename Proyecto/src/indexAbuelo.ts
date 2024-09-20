@@ -11,7 +11,7 @@ class AppContainer extends HTMLElement {
 
         const workerCard: MyWorkers[] = [];
 
-        const impar = workers.filter((_,index) => index % 2 !== 0);
+        const impar = workers.filter(worker => worker.id % 2 !== 0);
         console.log(impar);
 
 
